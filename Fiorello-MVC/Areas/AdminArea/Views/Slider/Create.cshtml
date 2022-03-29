@@ -1,0 +1,26 @@
+﻿@model Slider
+@{
+    ViewData["Title"] = "Create Category";
+}
+
+<div class="container">
+    <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+
+                <form class="forms-sample" method="post" asp-action="Create" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label asp-for="Photo"></label>
+                        <input  class="form-control" asp-for="Photo">
+                        <span class="text-danger" asp-validation-for="Photo"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary me-2">Submit</button>
+                    <button class="btn btn-light">
+                        <a asp-action="Index">Cancel</a>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

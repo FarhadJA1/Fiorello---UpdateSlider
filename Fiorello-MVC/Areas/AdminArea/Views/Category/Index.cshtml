@@ -1,0 +1,54 @@
+﻿@model List<Category>
+@{
+    ViewData["Title"] = "Category";
+    int count = 1;
+}
+
+<div class="container mt-3">
+    <div class="d-flex justify-content-between">
+        <h2>Categories</h2>
+        <a class="btn btn-success" asp-action="Create">Create Category</a>
+    </div>
+    <div class="table-responsive pt-3">
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th>
+                        #
+                    </th>
+                    <th>
+                        Category Name
+                    </th>
+                    <th>
+                        Settings
+                    </th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var category in Model)
+	{
+                <tr>
+                    <td>
+                        @count
+                    </td>
+                    <td>
+                        @category.Name
+                    </td>
+                    <td>
+                        <a class="btn btn-warning" asp-action="Edit" asp-route-id="@category.Id">Edit</a>
+                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@category.Id">Delete</a>
+                        <a class="btn btn-info" asp-action="Detail" asp-route-id="@category.Id">Detail</a>
+                    </td>
+                   
+                </tr>
+
+                    count++;
+                }
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

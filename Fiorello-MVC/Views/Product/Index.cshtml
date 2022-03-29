@@ -1,0 +1,18 @@
+﻿@model List<Product>
+@{
+    ViewData["Title"] = "Products";
+}
+
+<section id="products">
+    <div class="container my-3">
+        <div class="row">
+            <partial name="_ProductsPartial" />
+
+        </div>
+        <div class="d-flex justify-content-center">
+            <button id="load-more" class="btn btn-outline-primary my-3">Show more...</button>
+        </div>
+        
+    </div>
+</section>
+

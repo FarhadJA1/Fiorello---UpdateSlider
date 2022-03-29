@@ -1,0 +1,28 @@
+﻿@model Slider
+@{
+    ViewData["Title"] = "Update Category";
+}
+
+<div class="container">
+    <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <div>
+                    <img style="width:150px;height:150px" src="~/img/@Model.Image" alt="Alternate Text" />
+                </div>
+
+                <form class="forms-sample mt-5" method="post" asp-action="Update" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label asp-for="Photo"></label>
+                        <input class="form-control" asp-for="Photo">
+                        <span class="text-danger" asp-validation-for="Photo"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary me-2">Submit</button>
+                    <button class="btn btn-light">
+                        <a asp-action="Index">Cancel</a>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
